@@ -1,0 +1,9 @@
+Navbar
+Landing page
+Marquee
+About
+Playful
+Cards
+Another cards section
+Ready to start project section
+Footer
