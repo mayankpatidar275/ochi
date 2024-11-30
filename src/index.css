@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "FoundersGrotesk-Semibold";
+    font-stretch: extra-condensed;
+    src: url("./assets/fonts/FoundersGrotesk-Semibold.ttf") format("ttf");
+  }
+  @font-face {
+    font-family: "icomoon";
+    src: url("./assets/fonts/icomoon.ttf") format("ttf");
+  }
+  @font-face {
+    font-family: "NeueMontreal-Regular";
+    src: url("./assets/fonts/NeueMontreal-Regular.ttf") format("ttf");
+  }
+}
+
+@layer components {
+  .underline-animation {
+    @apply relative;
+  }
+
+  .underline-animation::after {
+    @apply absolute content-[''] bg-black h-2 w-full left-0 bottom-[-4px] scale-x-0 hover:scale-x-100 origin-bottom-right hover:origin-bottom-left transition-transform duration-300;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    @apply absolute content-[''] bg-black h-[1.5px] w-full left-0 bottom-0 scale-x-100 hover:animate-underlineAnimation2;
+  }
+}
+
+@layer utilities {
+  .font-condensed {
+    font-stretch: condensed;
+  }
+}
+
+/* To hide scrollbar */
+/* @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+} */

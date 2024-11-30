@@ -1,4 +1,8 @@
 Navbar
+    Make it responsive
+    Using custom fonts downloaded(.ttf)
+    Animations
+
 Landing page
 Marquee
 About
@@ -7,3 +11,7 @@ Cards
 Another cards section
 Ready to start project section
 Footer
+
+Todo: 
+Smoth Animations
+Dark mode
