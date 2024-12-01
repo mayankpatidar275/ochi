@@ -23,7 +23,7 @@ function LandingPage() {
         ))}
       </div>
       <hr className="absolute left-0 w-full border border-t-zinc-200" />
-      <div className=" sub-heading flex flex-col md:flex-row md:gap-4 justify-between">
+      <div className="sub-heading flex flex-col pb-36 md:flex-row md:gap-4 justify-between">
         {subHeading.map((item, index) => (
           <div key={index} className=" my-6 ">
             {item}
