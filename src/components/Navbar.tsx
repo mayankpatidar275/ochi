@@ -119,7 +119,7 @@ function Navbar() {
               <ul className="flex flex-col py-6 gap-12  pt-12 list-none">
                 {navLinks.map((item, index) => (
                   <li key={index} className="uppercase cursor-pointer ">
-                    <a className="underline-animation font-FoundersGrotesk-Semibold leading-[.75px] font-semibold text-6xl tracking-[-0.2rem] md:text-7xl lg:text-8xl  inline ">
+                    <a className="underline-animation font-FoundersGroteskXCond-Bold leading-[.75px] text-6xl md:text-7xl lg:text-8xl inline ">
                       {item}
                     </a>
                   </li>

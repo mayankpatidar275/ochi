@@ -5,6 +5,11 @@ export default {
     extend: {
       fontFamily: {
         "FoundersGrotesk-Semibold": ["FoundersGrotesk-Semibold", "sans-serif"],
+        "FoundersGroteskXCond-Bold": [
+          "FoundersGroteskXCond-Bold",
+          "sans-serif",
+        ],
+        "FoundersGroteskXCond-Lt": ["FoundersGroteskXCond-Lt", "sans-serif"],
         icomoon: ["icomoon", "sans-serif"],
         "NeueMontreal-Regular": ["NeueMontreal-Regular", "sans-serif"],
       },

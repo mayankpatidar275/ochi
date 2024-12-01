@@ -15,3 +15,4 @@ Footer
 Todo: 
 Smoth Animations
 Dark mode
+Apply Font condensed

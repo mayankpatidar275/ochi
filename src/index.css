@@ -5,8 +5,18 @@
 @layer base {
   @font-face {
     font-family: "FoundersGrotesk-Semibold";
-    font-stretch: extra-condensed;
-    src: url("./assets/fonts/FoundersGrotesk-Semibold.ttf") format("ttf");
+    src: url("./assets/fonts/FoundersGrotesk/FoundersGrotesk-Semibold.otf")
+      format("opentype");
+  }
+  @font-face {
+    font-family: "FoundersGroteskXCond-Bold";
+    src: url("./assets/fonts/FoundersGrotesk/FoundersGroteskXCond-Bold.otf")
+      format("opentype");
+  }
+  @font-face {
+    font-family: "FoundersGroteskXCond-Lt";
+    src: url("./assets/fonts/FoundersGrotesk/FoundersGroteskXCond-Lt.otf")
+      format("opentype");
   }
   @font-face {
     font-family: "icomoon";
@@ -24,7 +34,7 @@
   }
 
   .underline-animation::after {
-    @apply absolute content-[''] bg-black h-2 w-full left-0 bottom-[-4px] scale-x-0 hover:scale-x-100 origin-bottom-right hover:origin-bottom-left transition-transform duration-300;
+    @apply absolute content-[''] bg-black h-2 w-full left-0 bottom-[5px] scale-x-0 hover:scale-x-100 origin-bottom-right hover:origin-bottom-left transition-transform duration-300;
   }
 
   .link-underline {
