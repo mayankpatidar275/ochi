@@ -20,7 +20,7 @@ function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <header>
-      <nav className="fixed z-[999] w-full px-6 py-6 font-NeueMontreal-Regular flex justify-between items-center">
+      <nav className="fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center">
         <div className="logo z-[9999]">
           <h3>
             <svg
@@ -111,7 +111,7 @@ function Navbar() {
         <div
           className={`${
             isNavOpen && "translate-y-0 opacity-100 duration-[0.35s] lg:hidden"
-          }  -translate-y-full opacity-0 text-black fixed bg-zinc-100 inset-0 px-6 py-6 pt-32 `}
+          }  -translate-y-full opacity-0 text-black fixed bg-zinc-100 inset-0 px-6 lg:px-14 py-6 pt-32 `}
         >
           <div className="max-h-full overflow-y-auto">
             <div className="mb-28">
