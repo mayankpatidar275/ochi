@@ -3,6 +3,9 @@ import KVPImg from "../assets/images/clientsProfiles/William-Barnes-1-300x300.pn
 import PlanetlyPImg from "../assets/images/clientsProfiles/Nina.jpg.png";
 import WorkizPImg from "../assets/images/clientsProfiles/Tomer.png";
 import PremiumPImg from "../assets/images/clientsProfiles/William-Barnes-1-300x300.png";
+import logoOchi from "../assets/images/logos/logo001.svg";
+import logoClutch from "../assets/images/logos/logo002.svg";
+import logoAcademy from "../assets/images/logos/logo003.png";
 
 const clientData = [
   {
@@ -133,6 +136,36 @@ function Reviews() {
       </div>
 
       <hr className="absolute left-0 w-full border border-t-zinc-200" />
+
+      <div className="px-6 lg:px-12 py-20 md:flex-row flex w-full flex-col gap-5">
+        <div className="bg-[#004d43] relative overflow-hidden flex justify-center items-center w-[90vw] h-[70vw] lg:h-[25vw] lg:w-[25vw] md:h-[30vw] md:w-[30vw]  lg:flex-[2] rounded-xl">
+          <img src={logoOchi} alt="ochilogo" />
+          <div className="absolute left-0 bottom-0 m-4 mb-5 uppercase">
+            <a
+              href=""
+              className="border rounded-3xl py-2 px-3 border-[#cdea68] text-[#cdea68]"
+            >
+              c 2019-2022
+            </a>
+          </div>
+        </div>
+        <div className="bg-[#000000] relative overflow-hidden flex justify-center items-center w-[90vw] h-[70vw] lg:h-[25vw] lg:w-[25vw] md:h-[30vw] md:w-[30vw] lg:flex-1 rounded-xl">
+          <img src={logoClutch} alt="clutchlogo" />
+          <div className="absolute left-0 bottom-0 m-4 mb-5 uppercase">
+            <a href="" className="border rounded-3xl py-2 px-3">
+              5.0 on clutch
+            </a>
+          </div>
+        </div>
+        <div className="bg-[#000000] mix-blend-hard-light relative overflow-hidden flex justify-center items-center w-[90vw] h-[70vw] lg:h-[25vw] lg:w-[25vw] md:h-[30vw] md:w-[30vw] lg:flex-1 rounded-xl">
+          <img className="w-32 h-32" src={logoAcademy} alt="logoAcademy" />
+          <div className="absolute left-0 bottom-0 m-4 mb-5 uppercase">
+            <a href="" className="border rounded-3xl py-2 px-3">
+              Bootcamp alumni
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
