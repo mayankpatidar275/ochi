@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import React from "react";
+import contentImg from "../assets/images/content-image01.jpg";
 
 const heroHeading = ["We Create", "Eye-Opening", "Presentations"];
 const subHeading = [
@@ -16,7 +18,14 @@ function LandingPage() {
             className="masker -mb-3 lg:-mb-6 flex items-start justify-center w-fit"
           >
             {index == 1 && (
-              <div className="bg-green-400 rounded-md h-[2.4rem] w-16  md:h-[2.9rem] md:w-20 lg:h-[5.1rem] lg:w-32 mr-2 md:mr-3 lg:mr-5"></div>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "9vw" }}
+                transition={{ ease: [0.76, 0, 0.24, 1], duration: "1" }}
+                className=" bg-green-400 overflow-hidden rounded-md h-[2.4rem] w-16 md:h-[2.9rem] md:w-20 lg:h-[5.1rem] lg:w-32 mr-2 md:mr-3 lg:mr-5"
+              >
+                <img src={contentImg} alt="contentImg" />
+              </motion.div>
             )}
             <h1 className="flex items-center">{item}</h1>
           </div>

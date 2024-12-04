@@ -8,8 +8,11 @@ import Featured from "./components/Featured";
 import Reviews from "./components/Reviews";
 import ReadyToStart from "./components/ReadyToStart";
 import Footer from "./components/footer";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
+
   return (
     <div className="w-full min-h-screen text-white bg-zinc-900">
       <Navbar />
