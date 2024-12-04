@@ -7,6 +7,7 @@ import Eyes from "./components/Eyes";
 import Featured from "./components/Featured";
 import Reviews from "./components/Reviews";
 import ReadyToStart from "./components/ReadyToStart";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Featured />
       <Reviews />
       <ReadyToStart />
+      <Footer />
     </div>
   );
 }
