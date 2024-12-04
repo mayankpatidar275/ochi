@@ -6,6 +6,7 @@ import About from "./components/About";
 import Eyes from "./components/Eyes";
 import Featured from "./components/Featured";
 import Reviews from "./components/Reviews";
+import ReadyToStart from "./components/ReadyToStart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Eyes />
       <Featured />
       <Reviews />
+      <ReadyToStart />
     </div>
   );
 }
