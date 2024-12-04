@@ -145,7 +145,7 @@ function Reviews() {
               href=""
               className="border rounded-3xl py-2 px-3 border-[#cdea68] text-[#cdea68]"
             >
-              c 2019-2022
+              &copy; 2019-2022
             </a>
           </div>
         </div>
