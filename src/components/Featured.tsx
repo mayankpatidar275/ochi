@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CS_Project from "../assets/images/projects/CS_Website_1-663x551.png";
 import AH2_Project from "../assets/images/projects/Frame-481692-1-663x551.png";
 import Fyde_Project from "../assets/images/projects/Fyde_Illustration_Crypto_2-663x551.png";
 import Visa_Project from "../assets/images/projects/Vise_front2-663x551.jpg";
 import Trawa_Project from "../assets/images/projects/Frame-3875-663x551.jpg";
 import Bean_Project from "../assets/images/projects/PB-Front-4-663x551.png";
+import { motion, useAnimation } from "framer-motion";
 
 const projects = [
   {
@@ -56,19 +57,41 @@ const projects = [
 ];
 
 function Featured() {
+  const cards = [
+    useAnimation(),
+    useAnimation(),
+    useAnimation(),
+    useAnimation(),
+    useAnimation(),
+    useAnimation(),
+  ];
+
+  const handleHover = (index) => {
+    cards[index].start({ y: "0" });
+  };
+
+  const handleHoverEnd = (index) => {
+    cards[index].start({ y: "100%" });
+  };
+
   return (
-    <div className="w-full py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0"
+      className="w-full py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl"
+    >
       <div className="featured-heading px-6">
         <h1 className="mb-8 font-NeueMontreal-Regular text-3xl ">
           Featured Projects
         </h1>
       </div>
       <hr className="absolute left-0 w-full border border-t-zinc-200" />
-      <div className="projects px-6 py-20 w-full  flex justify-between flex-wrap">
+      <div className="projects px-6 py-20 w-full flex justify-between flex-wrap">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="project mb-16 w-[90vw] md:w-[46vw] lg:w-[47vw] hover:scale-90"
+            className="project mb-16 w-[90vw] md:w-[46vw] lg:w-[47vw]"
           >
             <div className="project-title flex items-center gap-2 mb-4">
               <div className="w-3 h-3 rounded-full bg-zinc-200"></div>
@@ -76,15 +99,53 @@ function Featured() {
                 {project.title}
               </div>
             </div>
-            <div className="project-image mb-5 relative w-full">
-              <img
-                className="rounded-xl w-full"
-                src={project.imageSource}
-                alt="project_image"
-              />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="project-image mb-5 w-full">
+              <div className="absolute md:hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-right">
                 {project.title}
               </div>
+              <motion.div
+                onHoverStart={() => {
+                  handleHover(index);
+                }}
+                onHoverEnd={() => {
+                  handleHoverEnd(index);
+                }}
+                className="group relative"
+              >
+                <div className="overflow-hidden rounded-xl w-full group-hover:scale-90 transition-transform duration-1000">
+                  <img
+                    className="rounded-xl w-full group-hover:scale-125 transition-all duration-1000"
+                    src={project.imageSource}
+                    alt="project_image"
+                  />
+                </div>
+
+                <div
+                  className={`center-title overflow-hidden z-10 flex absolute top-1/2 ${
+                    index % 2 === 0
+                      ? "md:left-full md:right-0"
+                      : "md:left-0 md:right-0"
+                  } md:-translate-x-1/2 -translate-y-1/2  w-[100vw] justify-center`}
+                >
+                  <div className="masker overflow-hidden -mb-3 lg:-mb-6 flex items-start justify-center w-fit font-FoundersGroteskXCond-Bold text-5xl md:text-5xl lg:text-8xl uppercase">
+                    <h1 className="flex items-center text-[#cdea68]">
+                      {project.title.split("").map((item, idx) => (
+                        <motion.span
+                          initial={{ y: "100%" }}
+                          transition={{
+                            ease: [0.22, 1, 0.36, 1],
+                            delay: idx * 0.02,
+                          }}
+                          animate={cards[index]}
+                          className="inline-block"
+                        >
+                          {item}
+                        </motion.span>
+                      ))}
+                    </h1>
+                  </div>
+                </div>
+              </motion.div>
             </div>
             <div className="project-tags flex flex-wrap gap-4">
               {project.links.map((link, index) => (
