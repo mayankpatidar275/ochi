@@ -100,9 +100,6 @@ function Featured() {
               </div>
             </div>
             <div className="project-image mb-5 w-full">
-              <div className="absolute md:hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-right">
-                {project.title}
-              </div>
               <motion.div
                 onHoverStart={() => {
                   handleHover(index);
@@ -125,7 +122,7 @@ function Featured() {
                     index % 2 === 0
                       ? "md:left-full md:right-0"
                       : "md:left-0 md:right-0"
-                  } md:-translate-x-1/2 -translate-y-1/2  w-[100vw] justify-center`}
+                  } md:-translate-x-1/2 -translate-y-1/2  w-[100vw] justify-center pointer-events-none`}
                 >
                   <div className="masker overflow-hidden -mb-3 lg:-mb-6 flex items-start justify-center w-fit font-FoundersGroteskXCond-Bold text-5xl md:text-5xl lg:text-8xl uppercase">
                     <h1 className="flex items-center text-[#cdea68]">

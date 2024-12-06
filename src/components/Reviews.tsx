@@ -66,7 +66,7 @@ function Reviews() {
   const [expandedReview, setExpandedReview] = useState("");
 
   return (
-    <div className="w-full py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl">
+    <div className="w-full -mt-4 py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl">
       <div className="reviews-heading px-6">
         <h1 className="mb-8 font-NeueMontreal-Regular text-3xl ">
           Client's Reviews
