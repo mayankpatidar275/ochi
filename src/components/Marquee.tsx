@@ -5,7 +5,12 @@ const marqueeText = "We are ochi ";
 
 function Marquee() {
   return (
-    <div className="bg-[#004d43] py-20 rounded-tr-2xl rounded-tl-2xl w-full">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-0.1"
+      className="-mt-4 bg-[#004d43] py-20 rounded-tr-2xl rounded-tl-2xl w-full"
+    >
       <div className="border-y-2 flex overflow-hidden">
         <motion.h1
           initial={{ x: 0 }}

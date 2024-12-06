@@ -14,7 +14,7 @@ function App() {
   const locomotiveScroll = new LocomotiveScroll();
 
   return (
-    <div className="w-full min-h-screen text-white bg-zinc-900">
+    <div className="w-full min-h-screen text-white bg-white">
       <Navbar />
       <LandingPage />
       <Marquee />

@@ -9,7 +9,12 @@ const socials = [
 
 function About() {
   return (
-    <div className="bg-[#cdea68] p-6 lg:pt-14 pt-20 rounded-2xl">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed=".04"
+      className="-mt-4 bg-[#cdea68] p-6 lg:pt-14 pt-20 rounded-2xl"
+    >
       <div className="pb-20">
         <h2 className="custom-heading max-w-screen-xl">
           <p className="font-NeueMontreal-Regular text-3xl md:text-5xl lg:text-5xl text-zinc-900">

@@ -10,7 +10,12 @@ const subHeading = [
 
 function LandingPage() {
   return (
-    <div className="px-6 lg:px-14 w-full h-full bg-zinc-900">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-.3"
+      className="px-6 lg:px-14 w-full h-full bg-zinc-900"
+    >
       <div className="heading pt-44 pb-48 font-FoundersGroteskXCond-Bold text-6xl md:text-7xl lg:text-9xl uppercase">
         {heroHeading.map((item, index) => (
           <div

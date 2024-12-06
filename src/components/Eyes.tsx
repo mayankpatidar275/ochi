@@ -15,8 +15,13 @@ function Eyes() {
   });
 
   return (
-    <div className="relative w-full">
-      <div className="w-[100vw]">
+    <div className="relative w-full bg-blue-400 overflow-hidden">
+      <div
+        data-scroll
+        data-scroll-section
+        data-scroll-speed="-0.7"
+        className="w-[100vw]"
+      >
         <picture className="w-[100vw] flex justify-center items-center">
           <img
             className="w-full"
