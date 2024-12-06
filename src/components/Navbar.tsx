@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const navLinks = ["Services", "Our work", "About us", "Insights", "Contact us"];
 const socials = [
@@ -18,10 +18,42 @@ const email = "hello@ochi.design";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("stopped");
+  const prevScrollOffSetRef = useRef(0); // Use ref instead of state
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollOffset = window.scrollY;
+
+      console.log("window.scrollY: ", currentScrollOffset);
+      console.log("prevScrollOffSet: ", prevScrollOffSetRef.current);
+
+      if (currentScrollOffset > prevScrollOffSetRef.current) {
+        setScrollDirection("down");
+        console.log("setting down");
+      } else if (currentScrollOffset < prevScrollOffSetRef.current) {
+        setScrollDirection("up");
+        console.log("setting up");
+      }
+
+      prevScrollOffSetRef.current = currentScrollOffset; // Update ref value
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Cleanup listener
+    };
+  }, []);
+
   return (
     <header>
-      <nav className="fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center">
-        <div className="logo z-[9999]">
+      <nav
+        className={`${
+          scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+        } backdrop-blur-sm transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
+      >
+        <div className="logo z-[999]">
           <h3>
             <svg
               className={`${isNavOpen && "invert"}`}
