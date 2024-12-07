@@ -44,6 +44,14 @@
   .link-underline::after {
     @apply absolute content-[''] bg-black h-[1.5px] w-full left-0 bottom-0 scale-x-100 hover:animate-underlineAnimation2;
   }
+
+  .hover-underline-animation {
+    @apply relative inline-block;
+  }
+
+  .hover-underline-animation::after {
+    @apply absolute content-[''] w-full scale-x-0 h-[1.2px] bottom-0 left-0 bg-zinc-200 transition-transform ease-[cubic-bezier(.215,.61,.355,1)] duration-500 hover:scale-x-100 origin-bottom-right hover:origin-bottom-left;
+  }
 }
 
 @layer utilities {

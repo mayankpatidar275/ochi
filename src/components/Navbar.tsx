@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import splitStringByRegex from "../utils/splitString";
 
 const navLinks = ["Services", "Our work", "About us", "Insights", "Contact us"];
 const socials = [
@@ -17,6 +18,8 @@ const addresses = [
 const email = "hello@ochi.design";
 
 function Navbar() {
+  const [mouseEnteredNavItem, setMouseEnteredNavItem] = useState(-1);
+
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("stopped");
   const prevScrollOffSetRef = useRef(0); // Use ref instead of state
@@ -51,7 +54,7 @@ function Navbar() {
       <nav
         className={`${
           scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
-        } backdrop-blur-sm transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
+        } bg-zinc-900 bg-opacity-25 backdrop-blur-sm transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
       >
         <div className="logo z-[999]">
           <h3>
@@ -90,11 +93,43 @@ function Navbar() {
           {navLinks.map((item, index) => (
             <li
               key={index}
-              className={`text-lg capitalize font-light ${
+              onMouseEnter={() => setMouseEnteredNavItem(index)}
+              onMouseLeave={() => setMouseEnteredNavItem(-1)}
+              className={`cursor-pointer flex text-lg font-light ${
                 index === navLinks.length - 1 && "ml-32"
               }`}
             >
-              {item}
+              <span className="nav-text-container pb-1 hover-underline-animation relative flex overflow-hidden">
+                {splitStringByRegex(item).map((character, i) => (
+                  <span
+                    className={`${
+                      i == 0 && "uppercase"
+                    } char-container relative`}
+                    key={i}
+                  >
+                    <span
+                      // style={{ transitionDelay: `${i * 0.02}s` }}
+                      className={` ${
+                        mouseEnteredNavItem === index
+                          ? "-translate-y-full"
+                          : "translate-y-0"
+                      } whitespace-pre inline-block transform ease-[cubic-bezier(.215,.61,.355,1)] duration-500`}
+                    >
+                      {character}
+                    </span>
+                    <span
+                      // style={{ transitionDelay: `${i * 0.02}s` }}
+                      className={`${
+                        mouseEnteredNavItem === index
+                          ? "-translate-y-full"
+                          : "translate-y-0"
+                      } transform duration-500 whitespace-pre inline-block absolute top-full w-full left-0`}
+                    >
+                      {character}
+                    </span>
+                  </span>
+                ))}
+              </span>
             </li>
           ))}
         </ul>
