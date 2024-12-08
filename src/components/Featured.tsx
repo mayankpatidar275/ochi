@@ -6,6 +6,8 @@ import Visa_Project from "../assets/images/projects/Vise_front2-663x551.jpg";
 import Trawa_Project from "../assets/images/projects/Frame-3875-663x551.jpg";
 import Bean_Project from "../assets/images/projects/PB-Front-4-663x551.png";
 import { motion, useAnimation } from "framer-motion";
+import WaveButton from "./ui/WaveButton";
+import TagButton from "./ui/TagButton";
 
 const projects = [
   {
@@ -82,7 +84,7 @@ function Featured() {
       className="w-full py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl"
     >
       <div className="featured-heading px-6">
-        <h1 className="mb-8 font-NeueMontreal-Regular text-3xl ">
+        <h1 className="mb-8 font-NeueMontreal-Regular text-3xl lg:text-5xl">
           Featured Projects
         </h1>
       </div>
@@ -146,18 +148,18 @@ function Featured() {
             </div>
             <div className="project-tags flex flex-wrap gap-4">
               {project.links.map((link, index) => (
-                <div key={index} className="mb-2 uppercase">
-                  <a
-                    href=""
-                    className="border rounded-3xl py-2 px-3 border-zinc-200"
-                  >
-                    {link.title}
-                  </a>
-                </div>
+                <TagButton key={index} link={link} />
               ))}
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <WaveButton
+          primaryColor={"#f4f4f5"} //text-zinc-200
+          secondaryColor={"#18181b"} //text-zinc-900
+          text={"Read More"}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import WaveButton from "./ui/WaveButton";
 
 function ReadyToStart() {
   const [rotate, setRotate] = useState(0);
@@ -14,7 +15,7 @@ function ReadyToStart() {
     });
   });
   return (
-    <div className="w-full flex flex-col gap-32 lg:gap-52 items-center py-20 bg-[#cdea68] rounded-tr-2xl rounded-tl-2xl">
+    <div className="w-full flex flex-col gap-32 lg:gap-52 items-center py-20 bg-[#cdea68] rounded-tr-2xl rounded-tl-2xl -mt-4">
       <div className="heading justify-self-start text-zinc-900 font-FoundersGroteskXCond-Bold text-6xl md:text-7xl lg:text-9xl uppercase">
         <div className="masker -mb-3 lg:-mb-6 flex items-center justify-center w-full">
           <h1 className="flex items-center">Ready</h1>
@@ -58,25 +59,21 @@ function ReadyToStart() {
       </div>
       <div className="flex flex-col gap-4">
         <div>
-          <a
-            href=""
-            className="flex gap-10 bg-zinc-900 rounded-[2rem] py-4 px-5 w-fit justify-center items-center"
-          >
-            <div className="uppercase">Start the project</div>
-            <div className="w-2 h-2 bg-zinc-200 rounded-full"></div>
-          </a>
+          <WaveButton
+            primaryColor={"#18181b"} //text-zinc-900
+            secondaryColor={"#f4f4f5"} //text-zinc-200
+            text={"Start the project"}
+          />
         </div>
         <div className="text-zinc-900 flex justify-center">
           <span>OR</span>
         </div>
         <div>
-          <a
-            href=""
-            className="flex gap-10 bg-zinc-900 rounded-[2rem] py-4 px-5 w-fit justify-center items-center"
-          >
-            <div className="uppercase">Hello@ochi.design</div>
-            <div className="w-2 h-2 bg-zinc-200 rounded-full"></div>
-          </a>
+          <WaveButton
+            primaryColor={"#f4f4f5"} //text-zinc-200
+            secondaryColor={"#18181b"} //text-zinc-900
+            text={"Hello@ochi.design"}
+          />
         </div>
       </div>
     </div>

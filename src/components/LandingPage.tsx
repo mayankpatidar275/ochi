@@ -36,7 +36,7 @@ function LandingPage() {
           </div>
         ))}
 
-        <div className="-mr-6 lg:-mr-14 scale-50 md:scale-100 absolute top-0 translate-y-full right-0">
+        <div className="-mr-6 lg:-mr-14 scale-50 md:scale-100 absolute top-0 translate-y-full right-0 cursor-pointer">
           <a href="" target="_blank">
             <svg width="53.08" height="171.358">
               <path
@@ -59,7 +59,10 @@ function LandingPage() {
           </div>
         ))}
         <div className="my-6 uppercase">
-          <a href="" className="border rounded-3xl py-2 px-3 border-zinc-200">
+          <a
+            href=""
+            className="border rounded-3xl py-2 px-3 border-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 transition-all duration-300 ease-[cubic-bezier(.215,.61,.355,1)]"
+          >
             Start The Project
           </a>
         </div>

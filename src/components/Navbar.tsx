@@ -63,7 +63,7 @@ function Navbar() {
           !isNavOpen && "bg-zinc-900 bg-opacity-25 backdrop-blur-sm"
         } transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
       >
-        <div className="logo z-[999]">
+        <div className="logo z-[999] cursor-pointer">
           <h3>
             <svg
               className={`${isNavOpen && "invert"}`}

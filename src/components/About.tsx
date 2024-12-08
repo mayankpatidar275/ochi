@@ -1,4 +1,5 @@
 import React from "react";
+import WaveButton from "./ui/WaveButton";
 
 const socials = [
   { name: "Instagram", link: "" },
@@ -13,7 +14,7 @@ function About() {
       data-scroll
       data-scroll-section
       data-scroll-speed=".04"
-      className="-mt-4 bg-[#cdea68] p-6 lg:pt-14 pt-20 rounded-2xl"
+      className="-mt-12 bg-[#cdea68] p-6 lg:pt-14 py-20 rounded-2xl"
     >
       <div className="pb-20">
         <h2 className="custom-heading max-w-screen-xl">
@@ -60,16 +61,14 @@ function About() {
 
       <div className="pt-6 flex flex-col gap-10 lg:flex-row">
         <div className="lg:w-1/2">
-          <h1 className="mb-8 font-NeueMontreal-Regular text-3xl text-zinc-900">
+          <h1 className="mb-8 font-NeueMontreal-Regular text:3xl lg:text-5xl text-zinc-900">
             Our approach
           </h1>
-          <a
-            href=""
-            className="flex gap-10 bg-zinc-900 rounded-[2rem] py-4 px-5 w-fit justify-center items-center"
-          >
-            <div className="uppercase">Read more</div>
-            <div className="w-2 h-2 bg-zinc-200 rounded-full"></div>
-          </a>
+          <WaveButton
+            primaryColor={"#18181b"} //text-zinc-900
+            secondaryColor={"#f4f4f5"} //text-zinc-200
+            text={"Read More"}
+          />
         </div>
         <div>
           <img

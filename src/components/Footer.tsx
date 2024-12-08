@@ -43,7 +43,7 @@ function Footer() {
                 <ul>
                   {navLinks.map((item, index) => (
                     <li key={index}>
-                      <a className="link-underline" href="">
+                      <a className="link-underline after:bg-zinc-200" href="">
                         {item}
                       </a>
                     </li>
@@ -57,7 +57,7 @@ function Footer() {
                     <>
                       <span
                         key={index}
-                        className="link-underline cursor-pointer"
+                        className="link-underline after:bg-zinc-200 cursor-pointer"
                       >
                         {item}
                       </span>
@@ -68,7 +68,10 @@ function Footer() {
               </div>
               <div className="my-6">
                 <p className="mb-3">E:</p>
-                <a className="link-underline" href={"mailto:" + email}>
+                <a
+                  className="link-underline after:bg-zinc-200"
+                  href={"mailto:" + email}
+                >
                   {email}
                 </a>
               </div>
@@ -79,7 +82,10 @@ function Footer() {
                 <ul>
                   {socials.map((item, index) => (
                     <li key={index}>
-                      <a className="link-underline" href={item.link}>
+                      <a
+                        className="link-underline after:bg-zinc-200"
+                        href={item.link}
+                      >
                         {item.name}
                       </a>
                     </li>
@@ -92,7 +98,7 @@ function Footer() {
       </div>
 
       <div className="copyright flex flex-col lg:flex-row pb-6 gap-6 lg:gap-0">
-        <div className="lg:flex-1 logo z-[9999]">
+        <div className="lg:flex-1 logo z-[999] cursor-pointer">
           <h3>
             <svg
               width="72"

@@ -6,6 +6,7 @@ import PremiumPImg from "../assets/images/clientsProfiles/William-Barnes-1-300x3
 import logoOchi from "../assets/images/logos/logo001.svg";
 import logoClutch from "../assets/images/logos/logo002.svg";
 import logoAcademy from "../assets/images/logos/logo003.png";
+import TagButton from "./ui/TagButton";
 
 const clientData = [
   {
@@ -24,7 +25,7 @@ const clientData = [
     servicesLinkes: [
       { title: "Sales Deck", to: "" },
       { title: "Investor Deck", to: "" },
-      { title: "Product Presentation", to: "" },
+      { title: "Product ", to: "" },
       { title: "Agency", to: "" },
       { title: "Big News Deck", to: "" },
       { title: "Branded Template", to: "" },
@@ -38,9 +39,9 @@ const clientData = [
   {
     clientName: "Workiz Easy",
     servicesLinkes: [
-      { title: "Company Presentation", to: "" },
-      { title: "Onboarding Presentation", to: "" },
-      { title: "Policy Deck & Playbook", to: "" },
+      { title: "Company ", to: "" },
+      { title: "Onboarding", to: "" },
+      { title: "Policy Deck", to: "" },
       { title: "Redesign", to: "" },
       { title: "Sales Deck", to: "" },
     ],
@@ -68,7 +69,7 @@ function Reviews() {
   return (
     <div className="w-full -mt-4 py-20 bg-zinc-900 text-zinc-200 rounded-tr-2xl rounded-tl-2xl">
       <div className="reviews-heading px-6">
-        <h1 className="mb-8 font-NeueMontreal-Regular text-3xl ">
+        <h1 className="mb-8 font-NeueMontreal-Regular text-3xl lg:text-5xl">
           Client's Reviews
         </h1>
       </div>
@@ -78,7 +79,7 @@ function Reviews() {
         {clientData.map((item, index) => (
           <div key={index} className="review flex flex-col w-full">
             <div className="review-top-bar py-6 flex lg:justify-between  w-full">
-              <div className="animate-underlineAnimation2 title w-full lg:flex lg:flex-1">
+              <div className="title w-full lg:flex lg:flex-1">
                 {item.clientName}
               </div>
               <div className="services hidden lg:flex lg:flex-1">Services:</div>
@@ -86,7 +87,7 @@ function Reviews() {
                 {item.personName}
               </div>
               <div
-                className="lg:flex lg:flex-1 text-right lg:justify-end w-full underline"
+                className="lg:flex lg:flex-1 text-right lg:justify-end w-full underline cursor-pointer"
                 onClick={() =>
                   setExpandedReview(
                     expandedReview == item.clientName ? "" : item.clientName
@@ -108,14 +109,9 @@ function Reviews() {
               <div className="lg:flex lg:flex-1">
                 <div className="mb-6 lg:hidden">Services</div>
                 <div className="flex flex-wrap lg:flex-col lg:mt-2 h-fit">
-                  {item.servicesLinkes.map((i, index) => (
+                  {item.servicesLinkes.map((link, index) => (
                     <div key={index} className="mb-6 lg:mb-6 mr-2 uppercase">
-                      <a
-                        href=""
-                        className="border rounded-3xl py-2 px-3 border-zinc-200"
-                      >
-                        {i.title}
-                      </a>
+                      <TagButton key={index} link={link} />
                     </div>
                   ))}
                 </div>

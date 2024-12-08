@@ -15,7 +15,7 @@ function Eyes() {
   });
 
   return (
-    <div className="relative w-full bg-blue-400 overflow-hidden">
+    <div className="relative -mt-10 w-full overflow-hidden">
       <div
         data-scroll
         data-scroll-section
