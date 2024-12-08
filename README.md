@@ -1,6 +1,6 @@
 # Ochi Modern Animated Responsive Website Clone
 
-![Ochi Modern Animated Responsive Website Clone Demo](public/demo-assets/Ochi_modern_animated_responsive_website.mp4)
+![Ochi Modern Animated Responsive Website Clone Demo](public/demo-assets/Ochi_modern_animated_responsive_website.gif)
 
 This project is a clone of the award-winning **Ochi** website, featured on [Awwwards](https://www.awwwards.com/). It replicates the sleek, modern design and engaging animations of the original, with a refined dark theme for added elegance.
 
