@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Ochi Modern Animated Responsive Website Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Ochi Modern Animated Responsive Website Clone Demo](public/assets/demo-assets/Ochi_modern_animated_responsive_website.mp4)
 
-Currently, two official plugins are available:
+This project is a clone of the award-winning **Ochi** website, featured on [Awwwards](https://www.awwwards.com/). It replicates the sleek, modern design and engaging animations of the original, with a refined dark theme for added elegance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Modern Design**: A clean and aesthetically pleasing layout inspired by the original Ochi website.
+- **Smooth Scrolling**: Powered by [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) for seamless and immersive scrolling effects.
+- **Dynamic Animations**: Implemented with [Framer Motion](https://www.framer.com/motion/) to bring the interface to life.
+- **Responsive Layout**: Fully responsive design, ensuring compatibility across all devices.
+- **Tailwind CSS**: Utilized for rapid and maintainable styling.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React.js**: Frontend framework for building the user interface.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Framer Motion**: For implementing animations and transitions.
+- **Locomotive Scroll**: To achieve smooth scrolling and scrolling effects.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Getting Started
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Follow the instructions below to set up and run the project locally.
+
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+- Node.js (v18 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mayankpatidar275/ochi.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd ochi
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn start
+   ```
+
+5. Open your browser and go to:
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+Thank you for checking out the my project - Ochi Modern Animated Responsive Website Clone! 🌟
