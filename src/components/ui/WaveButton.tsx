@@ -1,6 +1,12 @@
-import React from "react";
-
-function WaveButton({ primaryColor, secondaryColor, text }) {
+function WaveButton({
+  primaryColor,
+  secondaryColor,
+  text,
+}: {
+  primaryColor: string;
+  secondaryColor: string;
+  text: string;
+}) {
   return (
     <a
       href=""

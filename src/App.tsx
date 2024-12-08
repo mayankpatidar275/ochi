@@ -1,19 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import LocomotiveScroll from "locomotive-scroll";
+import { useEffect, useRef } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import LandingPage from "./components/LandingPage";
-import Marquee from "./components/Marquee";
 import About from "./components/About";
 import Eyes from "./components/Eyes";
 import Featured from "./components/Featured";
-import Reviews from "./components/Reviews";
-import ReadyToStart from "./components/ReadyToStart";
 import Footer from "./components/Footer";
-import LocomotiveScroll from "locomotive-scroll";
+import LandingPage from "./components/LandingPage";
+import Marquee from "./components/Marquee";
+import Navbar from "./components/Navbar";
+import ReadyToStart from "./components/ReadyToStart";
+import Reviews from "./components/Reviews";
 
 function App() {
   const scrollRef = useRef(null);
-  const locomotiveInstance = useRef(null);
+  const locomotiveInstance = useRef<LocomotiveScroll | null>(null);
 
   useEffect(() => {
     // Tailwind `lg` breakpoint (1024px by default)
@@ -21,10 +21,8 @@ function App() {
 
     const initializeLocomotiveScroll = () => {
       if (lgBreakpoint.matches && scrollRef.current) {
-        locomotiveInstance.current = new LocomotiveScroll({
-          el: scrollRef.current,
-          smooth: true,
-        });
+        locomotiveInstance.current = new LocomotiveScroll();
+
         // console.log("LocomotiveScroll initialized.");
       }
     };

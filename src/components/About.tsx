@@ -1,4 +1,3 @@
-import React from "react";
 import WaveButton from "./ui/WaveButton";
 
 const socials = [

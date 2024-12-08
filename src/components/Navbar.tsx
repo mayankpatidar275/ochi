@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import splitStringByRegex from "../utils/splitString";
 
 const navLinks = ["Services", "Our work", "About us", "Insights", "Contact us"];

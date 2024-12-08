@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import CS_Project from "../assets/images/projects/CS_Website_1-663x551.png";
+import Trawa_Project from "../assets/images/projects/Frame-3875-663x551.jpg";
 import AH2_Project from "../assets/images/projects/Frame-481692-1-663x551.png";
 import Fyde_Project from "../assets/images/projects/Fyde_Illustration_Crypto_2-663x551.png";
-import Visa_Project from "../assets/images/projects/Vise_front2-663x551.jpg";
-import Trawa_Project from "../assets/images/projects/Frame-3875-663x551.jpg";
 import Bean_Project from "../assets/images/projects/PB-Front-4-663x551.png";
-import { motion, useAnimation } from "framer-motion";
-import WaveButton from "./ui/WaveButton";
+import Visa_Project from "../assets/images/projects/Vise_front2-663x551.jpg";
 import TagButton from "./ui/TagButton";
+import WaveButton from "./ui/WaveButton";
 
 const projects = [
   {
@@ -68,11 +67,11 @@ function Featured() {
     useAnimation(),
   ];
 
-  const handleHover = (index) => {
+  const handleHover = (index: number) => {
     cards[index].start({ y: "0" });
   };
 
-  const handleHoverEnd = (index) => {
+  const handleHoverEnd = (index: number) => {
     cards[index].start({ y: "100%" });
   };
 

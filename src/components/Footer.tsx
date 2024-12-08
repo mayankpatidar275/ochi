@@ -1,5 +1,3 @@
-import React from "react";
-
 const socials = [
   { name: "Instagram", link: "" },
   { name: "Behance", link: "" },

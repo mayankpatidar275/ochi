@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import KVPImg from "../assets/images/clientsProfiles/William-Barnes-1-300x300.png";
+import { useState } from "react";
 import PlanetlyPImg from "../assets/images/clientsProfiles/Nina.jpg.png";
 import WorkizPImg from "../assets/images/clientsProfiles/Tomer.png";
-import PremiumPImg from "../assets/images/clientsProfiles/William-Barnes-1-300x300.png";
+import {
+  default as KVPImg,
+  default as PremiumPImg,
+} from "../assets/images/clientsProfiles/William-Barnes-1-300x300.png";
 import logoOchi from "../assets/images/logos/logo001.svg";
 import logoClutch from "../assets/images/logos/logo002.svg";
 import logoAcademy from "../assets/images/logos/logo003.png";

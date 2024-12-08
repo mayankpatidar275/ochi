@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 import contentImg from "../assets/images/content-image01.jpg";
 
 const heroHeading = ["We Create", "Eye-Opening", "Presentations"];

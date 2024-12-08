@@ -1,6 +1,4 @@
-import React from "react";
-
-function TagButton({ link }) {
+function TagButton({ link }: { link: { title: string; to: string } }) {
   return (
     <div className="mb-2 uppercase">
       <a
