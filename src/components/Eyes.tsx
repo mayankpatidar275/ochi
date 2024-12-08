@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import EyesBg from "../assets/images/Top-Viewbbcbv-1-1440x921.jpg";
 
 function Eyes() {
   const [rotate, setRotate] = useState(0);
@@ -23,11 +24,7 @@ function Eyes() {
         className="w-[100vw]"
       >
         <picture className="w-[100vw] flex justify-center items-center">
-          <img
-            className="w-full"
-            src="src/assets/images/Top-Viewbbcbv-1-1440x921.jpg"
-            alt="eyes bg image"
-          />
+          <img className="w-full" src={EyesBg} alt="eyes bg image" />
         </picture>
       </div>
       <div className="absolute flex justify-between w-1/2 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">

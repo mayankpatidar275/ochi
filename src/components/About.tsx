@@ -1,4 +1,5 @@
 import WaveButton from "./ui/WaveButton";
+import AboutImage from "../assets/images/Homepage-Photo-663x469.jpg";
 
 const socials = [
   { name: "Instagram", link: "" },
@@ -72,8 +73,8 @@ function About() {
         <div>
           <img
             className="rounded-3xl"
-            src="src/assets/images/Homepage-Photo-663x469.jpg"
-            alt="image"
+            src={AboutImage}
+            alt="About-Page-Photo"
           />
         </div>
       </div>
