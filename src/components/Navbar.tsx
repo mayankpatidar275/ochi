@@ -21,22 +21,17 @@ function Navbar() {
   const [mouseEnteredNavItem, setMouseEnteredNavItem] = useState(-1);
 
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState("stopped");
+  const [scrollDirection, setScrollDirection] = useState("up");
   const prevScrollOffSetRef = useRef(0); // Use ref instead of state
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollOffset = window.scrollY;
 
-      console.log("window.scrollY: ", currentScrollOffset);
-      console.log("prevScrollOffSet: ", prevScrollOffSetRef.current);
-
       if (currentScrollOffset > prevScrollOffSetRef.current) {
         setScrollDirection("down");
-        console.log("setting down");
       } else if (currentScrollOffset < prevScrollOffSetRef.current) {
         setScrollDirection("up");
-        console.log("setting up");
       }
 
       prevScrollOffSetRef.current = currentScrollOffset; // Update ref value
@@ -49,12 +44,24 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.classList.add("body-no-scroll");
+    } else {
+      document.body.classList.remove("body-no-scroll");
+    }
+  }, [isNavOpen]);
+
   return (
     <header>
       <nav
         className={`${
-          scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
-        } bg-zinc-900 bg-opacity-25 backdrop-blur-sm transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
+          scrollDirection === "down"
+            ? "lg:-translate-y-full"
+            : "lg:translate-y-0"
+        } ${
+          !isNavOpen && "bg-zinc-900 bg-opacity-25 backdrop-blur-sm"
+        } transition-all duration-500 fixed z-[999] w-full px-6 lg:px-14 py-6 font-NeueMontreal-Regular flex justify-between items-center`}
       >
         <div className="logo z-[999]">
           <h3>
@@ -173,71 +180,70 @@ function Navbar() {
             ></line>
           </svg>
         </div>
-
-        {/* Mobile Navigation Menue */}
-        <div
-          className={`${
-            isNavOpen && "translate-y-0 opacity-100 duration-[0.35s] lg:hidden"
-          }  -translate-y-full opacity-0 text-black fixed bg-zinc-100 inset-0 px-6 lg:px-14 py-6 pt-32 `}
-        >
-          <div className="max-h-full overflow-y-auto">
-            <div className="mb-28">
-              <hr className="absolute left-0 w-full border border-black" />
-              <ul className="flex flex-col py-6 gap-12  pt-12 list-none">
-                {navLinks.map((item, index) => (
-                  <li key={index} className="uppercase cursor-pointer ">
-                    <a className="underline-animation font-FoundersGroteskXCond-Bold leading-[.75px] text-6xl md:text-7xl lg:text-8xl inline ">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="font-NeueMontreal-Regular flex flex-col gap-5">
-              <div>
-                <div>
-                  <p className="mb-3">S:</p>
-                  <ul>
-                    {socials.map((item, index) => (
-                      <li key={index}>
-                        <a className="link-underline" href={item.link}>
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <p className="mb-3">L:</p>
-                  <address>
-                    {addresses.map((item, index) => (
-                      <>
-                        <span
-                          key={index}
-                          className="link-underline cursor-pointer"
-                        >
-                          {item}
-                        </span>
-                        <br />
-                      </>
-                    ))}
-                  </address>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <p className="mb-3">E:</p>
-                  <a className="link-underline" href={"mailto:" + email}>
-                    {email}
+      </nav>
+      {/* Mobile Navigation Menue */}
+      <div
+        className={`z-[99] ${
+          isNavOpen && "translate-y-0 opacity-100 duration-[0.35s] lg:hidden"
+        }  -translate-y-full opacity-0 text-black fixed bg-zinc-100 inset-0 px-6 lg:px-14 py-6 pt-32 `}
+      >
+        <div className="max-h-full overflow-y-auto">
+          <div className="mb-28">
+            <hr className="absolute left-0 w-full border border-black" />
+            <ul className="flex flex-col py-6 gap-12  pt-12 list-none">
+              {navLinks.map((item, index) => (
+                <li key={index} className="uppercase cursor-pointer ">
+                  <a className="underline-animation font-FoundersGroteskXCond-Bold leading-[.75px] text-6xl md:text-7xl lg:text-8xl inline ">
+                    {item}
                   </a>
-                </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="font-NeueMontreal-Regular flex flex-col gap-5">
+            <div>
+              <div>
+                <p className="mb-3">S:</p>
+                <ul>
+                  {socials.map((item, index) => (
+                    <li key={index}>
+                      <a className="link-underline" href={item.link}>
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div>
+                <p className="mb-3">L:</p>
+                <address>
+                  {addresses.map((item, index) => (
+                    <>
+                      <span
+                        key={index}
+                        className="link-underline cursor-pointer"
+                      >
+                        {item}
+                      </span>
+                      <br />
+                    </>
+                  ))}
+                </address>
+              </div>
+            </div>
+            <div>
+              <div>
+                <p className="mb-3">E:</p>
+                <a className="link-underline" href={"mailto:" + email}>
+                  {email}
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

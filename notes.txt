@@ -16,3 +16,5 @@ Todo:
 Smoth Animations
 Dark mode
 Apply Font condensed
+issue of scroll in navbar menu by locomotive scroll
+issue of hiding content in navbar menu

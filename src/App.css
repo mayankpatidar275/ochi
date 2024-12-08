@@ -1,0 +1,4 @@
+.body-no-scroll {
+  overflow: hidden;
+  height: 100vh; /* Prevent content shifting */
+}
